@@ -1,0 +1,214 @@
+haskell-shake (0.19.1-2) unstable; urgency=medium
+
+  * Add build dependency on haskell-js-dgtable-utils.
+
+ -- Clint Adams <clint@debian.org>  Sun, 06 Sep 2020 07:15:30 -0400
+
+haskell-shake (0.19.1-1) unstable; urgency=medium
+
+  [ Colin Watson ]
+  * Mark haskell-shake-data as Multi-Arch: foreign.
+
+  [ Clint Adams ]
+  * New upstream version.
+
+ -- Clint Adams <clint@debian.org>  Sat, 05 Sep 2020 18:23:33 -0400
+
+haskell-shake (0.16.4+dfsg-4) unstable; urgency=medium
+
+  * Disable tests for now, looks like the testsuite is not compatible with ghc
+    8.6.5
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Fri, 27 Sep 2019 12:59:19 +0200
+
+haskell-shake (0.16.4+dfsg-3) unstable; urgency=medium
+
+  * Disable testsuite on armhf, fails on Ubuntu builders, probably
+    due to a misalignment bug due to 64bit kernel.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 17 Dec 2018 11:30:40 +0100
+
+haskell-shake (0.16.4+dfsg-2) unstable; urgency=medium
+
+  * Bump debhelper compat level to 10
+
+ -- Ilias Tsitsimpis <iliastsi@debian.org>  Sun, 30 Sep 2018 21:20:32 +0300
+
+haskell-shake (0.16.4+dfsg-1) unstable; urgency=medium
+
+  [ Gianfranco Costamagna ]
+  * Repack tarball, since we should exclude viz.js file.
+    - thanks Sven Bartscher for the hint
+
+  [ Clint Adams ]
+  * Set Rules-Requires-Root to no.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 30 Jul 2018 10:35:31 +0200
+
+haskell-shake (0.16.4-2) unstable; urgency=medium
+
+  * Patch test7.ninja to cd to /tmp instead of
+    potentially-nonexistent homedir.
+
+ -- Clint Adams <clint@debian.org>  Sat, 21 Apr 2018 15:23:45 -0400
+
+haskell-shake (0.16.4-1) unstable; urgency=medium
+
+  [ Ilias Tsitsimpis ]
+  * Use salsa.debian.org URLs in Vcs-{Browser,Git} fields
+
+  [ Clint Adams ]
+  * Bump to Standards-Version 4.1.4.
+  * New upstream release
+
+ -- Clint Adams <clint@debian.org>  Mon, 09 Apr 2018 17:04:18 -0400
+
+haskell-shake (0.15.11+dfsg-1) unstable; urgency=medium
+
+  [ Sean Whitton ]
+  * Upload again with correct version number.
+    This was breaking `dht make-all`.
+
+  [ Ilias Tsitsimpis ]
+  * Change Priority to optional. Since Debian Policy version 4.0.1,
+    priority extra has been deprecated.
+  * Use the HTTPS form of the copyright-format URL
+  * Modify d/watch and Source field in d/copyright to use HTTPS
+  * Declare compliance with Debian policy 4.1.1
+
+  [ Clint Adams ]
+  * Bump to Standards-Version 4.1.3.
+
+ -- Clint Adams <clint@debian.org>  Thu, 28 Dec 2017 23:05:18 -0500
+
+haskell-shake (0.15.11-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Clint Adams <clint@debian.org>  Sun, 18 Jun 2017 02:11:47 -0400
+
+haskell-shake (0.15.10+dfsg-2) unstable; urgency=medium
+
+  * Upload to unstable as part of GHC 8 transition.
+
+ -- Clint Adams <clint@debian.org>  Thu, 27 Oct 2016 18:36:04 -0400
+
+haskell-shake (0.15.10+dfsg-1) experimental; urgency=medium
+
+  * Add '+dfsg' suffix to package version.
+    File 'html/viz.js' has been removed from upstream package.
+  * Remove 'upstream-tarball' CDBS rule.
+    Use uscan to repack the upstream tarball.
+  * Update d/copyright file (bump Copyright years)
+
+ -- Ilias Tsitsimpis <i.tsitsimpis@gmail.com>  Tue, 25 Oct 2016 14:23:24 +0300
+
+haskell-shake (0.15.10-2) experimental; urgency=medium
+
+  * Temporarily build-depend on ghc 8.
+
+ -- Clint Adams <clint@debian.org>  Mon, 17 Oct 2016 00:44:23 -0400
+
+haskell-shake (0.15.10-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Clint Adams <clint@debian.org>  Tue, 12 Jul 2016 17:13:50 -0400
+
+haskell-shake (0.15.6+dfsg-1) unstable; urgency=medium
+
+  [ Dmitry Bogatov ]
+  * Use secure (https) uri in Vcs-Git field in 'debian/control'
+
+  [ Joachim Breitner ]
+  * New upstream release
+
+  [ Ilias Tsitsimpis ]
+  * Use dversionmangle in d/watch file to remove the Debian specific suffix
+
+ -- Joachim Breitner <nomeata@debian.org>  Mon, 30 May 2016 17:27:52 +0200
+
+haskell-shake (0.15.5+dfsg-6) unstable; urgency=medium
+
+  * debian/rules: Adjust for arch-all-only-building
+
+ -- Joachim Breitner <nomeata@debian.org>  Wed, 20 Apr 2016 09:12:21 +0200
+
+haskell-shake (0.15.5+dfsg-5) unstable; urgency=medium
+
+  * Bump to Standards-Version 3.9.8.
+
+ -- Clint Adams <clint@debian.org>  Sun, 17 Apr 2016 15:40:39 -0400
+
+haskell-shake (0.15.5+dfsg-4) unstable; urgency=medium
+
+  * Switch Vcs-Git/Vcs-Browser headers to new location.
+
+ -- Clint Adams <clint@debian.org>  Thu, 03 Dec 2015 14:55:03 -0500
+
+haskell-shake (0.15.5+dfsg-3) experimental; urgency=medium
+
+  * Run the testsuite in an UTF locale
+
+ -- Joachim Breitner <nomeata@debian.org>  Fri, 11 Sep 2015 21:58:37 +0200
+
+haskell-shake (0.15.5+dfsg-2) experimental; urgency=medium
+
+  * Disable the test suite on architectures without a threaded runtime, due to
+    https://github.com/haskell/cabal/issues/2398
+  * Recover Files-Excluded: line in debian/copyright
+
+ -- Joachim Breitner <nomeata@debian.org>  Sat, 22 Aug 2015 09:43:25 +0200
+
+haskell-shake (0.15.5-1) experimental; urgency=medium
+
+  * New upstream release
+  * Bump standards-version to 3.9.6
+  * Depend on haskell-devscripts >= 0.10 to ensure that this package
+    builds against GHC in experimental
+
+ -- Joachim Breitner <nomeata@debian.org>  Thu, 20 Aug 2015 10:28:41 +0200
+
+haskell-shake (0.15.2+dfsg-2) unstable; urgency=medium
+
+  * Disable test suite on powerpc, due to #789458
+
+ -- Joachim Breitner <nomeata@debian.org>  Sun, 21 Jun 2015 09:52:25 +0200
+
+haskell-shake (0.15.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Joachim Breitner <nomeata@debian.org>  Sat, 13 Jun 2015 16:33:54 +0200
+
+haskell-shake (0.13.2+dfsg-5) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Joachim Breitner <nomeata@debian.org>  Mon, 27 Apr 2015 11:53:22 +0200
+
+haskell-shake (0.13.2+dfsg-4) experimental; urgency=medium
+
+  * Depend on haskell-devscripts 0.9, found in experimental
+  * Do not depend on transformers, which now comes with GHC
+
+ -- Joachim Breitner <nomeata@debian.org>  Sun, 21 Dec 2014 19:47:05 +0100
+
+haskell-shake (0.13.2+dfsg-3) unstable; urgency=medium
+
+  * Rebuild against latest libjs-jquery-flot.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 26 Nov 2014 10:10:43 +0000
+
+haskell-shake (0.13.2+dfsg-2) unstable; urgency=medium
+
+  * Disable tests on architectures without GHCi; they currently rely on
+    runhaskell.
+
+ -- Colin Watson <cjwatson@debian.org>  Fri, 04 Jul 2014 00:42:46 +0100
+
+haskell-shake (0.13.2+dfsg-1) unstable; urgency=low
+
+  * Initial release. (Closes: #751785)
+
+ -- Colin Watson <cjwatson@debian.org>  Sun, 29 Jun 2014 21:25:49 +0100

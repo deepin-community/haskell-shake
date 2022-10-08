@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+DEB_SETUP_GHC_CONFIGURE_ARGS := --datasubdir=/usr/share/shake
+
+DEB_ENABLE_TESTS := no
+
+# unicode problems in the testsuite
+check-ghc-stamp: export LC_ALL := C.UTF-8
+
+DEB_GHC_EXTRA_PACKAGES := libghc-shake-data (>= $(CABAL_VERSION))
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/hlibrary.mk
+
+html/viz.js:
+	touch $@
+
+# Create versions of the files we stripped from the upstream tarball that
+# are good enough to pass tests.
+build-ghc-stamp: html/viz.js
+
+install/libghc-shake-data:: debian/tmp-inst-ghc
+	mv debian/tmp-inst-ghc/usr/share/shake debian/libghc-shake-data/usr/share
+	dh_haskell_depends -plibghc-shake-data # for haskell:Extra-Depends substvar
